@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <META name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'>
+    <link rel="icon" type="image/png" href="./img/Icon/insta-logo-color.png">
+    <title>Instajam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="jsonArray.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body id="body" onload="renderPosts()">
+    <div class="body-container">
+
+        <div class="sidebarContainer" id="sidebarContainer">
+
+            <div id="sidebar-top" class="sidebar-top">
+                <div class="instaHeadline mobile-none">
+                    <p class="headText">Instajam</p>
+                    <img id="icon-head" class="headLogo" src="./img/Icon/insta-logo-black.png" alt="">
+                </div>
+
+                <div class="sidebarLink"><img id="icon-home" class="sidebarIcon" src="./img/Icon/home-icon-black.png">
+                    <p class="sidebarText"><b>Startseite</b></p>
+                </div>
+                <div class="sidebarLink mobile-none"><img id="icon-search" class="sidebarIcon"
+                        src="./img/Icon/search-icon-black.png">
+                    <p class="sidebarText">Suche</p>
+                </div>
+                <div class="sidebarLink"><img id="icon-compass" class="sidebarIcon"
+                        src="./img/Icon/compass-icon-black.png">
+                    <p class="sidebarText">Entdecken</p>
+                </div>
+                <div class="sidebarLink"><img id="icon-video" class="sidebarIcon" src="./img/Icon/video-icon-black.png">
+                    <p class="sidebarText">Reel</p>
+                </div>
+                <div class="sidebarLink"><img id="icon-message" class="sidebarIcon"
+                        src="./img/Icon/message-icon-black.png">
+                    <p class="sidebarText">Nachrichten</p>
+                </div>
+                <div class="sidebarLink mobile-none"><img id="icon-heart" class="sidebarIcon"
+                        src="./img/Icon/heart-icon-black.png">
+                    <p class="sidebarText">Benachrichtigungen</p>
+                </div>
+                <div onclick="openCreatePost()" class="sidebarLink"><img id="icon-create" class="sidebarIcon"
+                        src="./img/Icon/create-icon-black.png">
+                    <p class="sidebarText">Erstellen</p>
+                </div>
+                <div class="sidebarLink"><img class="profilImg" src="./img/Profil/jda.jpg">
+                    <p class="sidebarText">Profil</p>
+                </div>
+                <div onclick="darkmode()" class="sidebarLink"><img id="icon-mode" class="sidebarIcon"
+                        src="./img/Icon/light-dark-icon-black.png">
+                    <p class="sidebarText">Light/Dark Mode</p>
+                </div>
+            </div>
+
+            <div id="sidebar-bottom" class="sidebar-bottom">
+                <div class="sidebarLink"><img id="icon-at" class="sidebarIcon" src="./img/Icon/at-icon-black.png">
+                    <p class="sidebarText">Threads</p>
+                </div>
+                <div class="sidebarLink"><img id="icon-menu" class="sidebarIcon" src="./img/Icon/menu-icon-black.png">
+                    <p class="sidebarText">Mehr</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Create Poste -->
+        <div id="createPost-container" class="createPost-container-back d-none">
+
+            <div class="create-container">
+                <div class="create-headlinebox"> <button onclick="closeCreatePost()" class="createClose-bt">X</button>
+                    <p>Neuer Beitrag erstellen</p> <button onclick="ShareNewPost()" class="share-bt">Teilen</button>
+                </div>
+                <div class="create-box">
+                    <img id="create-img" class="create-img" src="./img/Post/new-post.jpg" alt="">
+                    <div class="create-text-box">
+                        <div class="create-text-author"><img class="profilImg" id="create-img"
+                                src="./img/Profil/jda.jpg">
+                            <p id="create-author" class="author"><b>jamal_drake</b></p>
+                        </div>
+                        <input class="create-discription-input" id="create-discription"
+                            placeholder="Bildunterschrift verfassen...">
+                        <input class="create-location-input" id="create-location" type="text"
+                            placeholder="Ort Hinzufügen">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Storys-->
+        <div class="story-content-container">
+            <div id="storyContainer" class="storyContainer">
+                <div class="postOptionContainer mobile-none">
+                    <p>Für Dich</p>
+                    <p class="grey">Gefolgt</p>
+                </div>
+                <div class="search-container">
+                    <input class="search-input" type="text" placeholder="Suchen">
+                    <div class="sidebarLink"><img id="icon-heart" class="sidebarIcon"
+                            src="./img/Icon/heart-icon-black.png">
+                        <p class="sidebarText">Benachrichtigungen</p>
+                    </div>
+                </div>
+                <div class="storyBox">
+                    <img class="storyCircle" src="./img/Profil/profil-bild2.jpg" alt="">
+                    <img class="storyCircle" src="./img/Profil/profil-bild4.jpg" alt="">
+                    <img class="storyCircle" src="./img/Profil/profil-bild1.jpg" alt="">
+                    <img class="storyCircle" src="./img/Profil/profil-bild3.jpg" alt="">
+                    <img class="storyCircle" src="./img/Profil/profil-bild6.jpg" alt="">
+                    <img class="storyCircle" src="./img/Profil/profil-bild5.jpg" alt="">
+                    <img class="storyCircle" src="./img/Profil/profil-bild5.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="contentContainer" id="contentContainer"></div>
+        </div>
+
+        <div class="suggestionsContainer" id="suggestionsContainer">
+            <div class="suggestions-headline">
+                <p>Vorschläge für dich</p> <span>Alle ansehen</span>
+            </div>
+            <div class="suggestions">
+                <img src="./img/SuggestionProfile/bild1.jpg" alt="">
+                <div>
+                    <p class="suggestion-name">fitness_fusion</p>
+                    <p class="suggestion-info">Vorschläge für dich</p>
+                </div>
+                <button class="follow-bt">Folgen</button>
+            </div>
+            <div class="suggestions">
+                <img src="./img/SuggestionProfile/bild2.jpg" alt="">
+                <div>
+                    <p class="suggestion-name">music_zone</p>
+                    <p class="suggestion-info">Vorschläge für dich</p>
+                </div>
+                <button class="follow-bt">Folgen</button>
+            </div>
+            <div class="suggestions">
+                <img src="./img/SuggestionProfile/bild3.jpg" alt="">
+                <div>
+                    <p class="suggestion-name">animal_adventurer</p>
+                    <p class="suggestion-info">Neu auf Instagram</p>
+                </div>
+                <button class="follow-bt">Folgen</button>
+            </div>
+            <div class="suggestions">
+                <img src="./img/SuggestionProfile/bild4.jpg" alt="">
+                <div>
+                    <p class="suggestion-name">fitness_fiesta</p>
+                    <p class="suggestion-info">Neu auf Instagram</p>
+                </div>
+                <button class="follow-bt">Folgen</button>
+            </div>
+            <div class="suggestions">
+                <img src="./img/SuggestionProfile/bild5.jpg" alt="">
+                <div>
+                    <p class="suggestion-name">pet_paradise</p>
+                    <p class="suggestion-info">Vorschläge für dich</p>
+                </div>
+                <button class="follow-bt">Folgen</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
